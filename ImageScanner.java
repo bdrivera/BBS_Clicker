@@ -13,7 +13,12 @@ import javax.imageio.ImageIO;
  */
 public class ImageScanner {
 
-    private static boolean isOnScreen(BufferedImage bi){
+    /**
+     *
+     * @param bi image to check for on screen
+     * @return is the image on the screen currently?
+     */
+    public boolean isOnScreen(BufferedImage bi){
         BufferedImage image = null;
         try {
             image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
