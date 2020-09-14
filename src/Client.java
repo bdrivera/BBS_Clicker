@@ -1,7 +1,9 @@
 import java.awt.AWTException;
+import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 
 /**
  * @author bret
@@ -14,18 +16,18 @@ public class Client implements Runnable {
     private Robot rob = new Robot();
 
     private boolean running = false;
+    private Rectangle clientArea;
+
 
     /**
      * the images of the buttons to be checked for
      */
-    BufferedImage[] image = new image[5];
+    BufferedImage[] image = new BufferedImage[5];
 
-
-    public void run() {
-        while(running) {
-
-        }
+    public Client() throws AWTException {
     }
+
+    public void run() {}
 
     /**
      * Uses class Robot instance to click on screen using Operating System mouse.
