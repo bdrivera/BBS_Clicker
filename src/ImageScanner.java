@@ -61,4 +61,11 @@ public class ImageScanner {
 
     }
 
+    public int getFoundX() {
+        return foundX;
+    }
+
+    public int getFoundY() {
+        return foundY;
+    }
 }

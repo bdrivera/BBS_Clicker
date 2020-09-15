@@ -15,8 +15,10 @@ public abstract class Client implements Runnable {
 
 
     public Robot rob = new Robot(); //Robot instance used for
+    public ImageScanner scan = new ImageScanner();
 
     public boolean running = false; // Flag for whether or not to keep looping the flag
+    public static boolean raidFlag = false; // Flag for if a raid invite has been sent
     private Rectangle clientArea; // The area of responsibility for this client.
 
     // The offset values used to find actual coordinates
@@ -72,10 +74,10 @@ public abstract class Client implements Runnable {
      * @param x horizontal coordinate of the screen
      * @param y vertical coordinate of the screen
      */
-    private void leftClickOnLocation(int x, int y) {
+    private synchronized void leftClickOnLocation(int x, int y) {
         rob.mouseMove(x, y);
-        rob.mousePress(InputEvent.BUTTON1_MASK);//come back to this, depreciated value
+        rob.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         rob.delay(200);
-        rob.mouseRelease(InputEvent.BUTTON1_MASK);
+        rob.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 }
