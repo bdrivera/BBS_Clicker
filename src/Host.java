@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * Host extends the abstract class Client
+ */
 public class Host extends Client implements Runnable {
 
     public Host(int x1, int y1, int x2, int y2) throws AWTException {

@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 public abstract class Client implements Runnable {
 
 
-    public Robot rob = new Robot(); //
+    public Robot rob = new Robot(); //Robot instance used for
 
     public boolean running = false; // Flag for whether or not to keep looping the flag
     private Rectangle clientArea; // The area of responsibility for this client.
