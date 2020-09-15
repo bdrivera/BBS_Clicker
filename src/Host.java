@@ -1,6 +1,8 @@
 import java.awt.*;
 
 /**
+ * @author bret
+ *
  * Host extends the abstract class Client
  */
 public class Host extends Client implements Runnable {
@@ -9,5 +11,10 @@ public class Host extends Client implements Runnable {
         super(x1, y1, x2, y2);
     }
 
-    public void run() {}
+    public void run() {
+        running = true;
+        while(running) {
+
+        }
+    }
 }
