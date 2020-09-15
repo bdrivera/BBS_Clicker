@@ -30,6 +30,8 @@ public class ImageScanner {
 
                 boolean invalid = false;
                 int k = x,l = y;
+
+
                 for(int a = 0;a<bi.getWidth();a++){
                     l = y;
                     for(int b = 0;b<bi.getHeight();b++){
