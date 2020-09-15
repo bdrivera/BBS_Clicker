@@ -11,21 +11,17 @@ import java.awt.image.BufferedImage;
 
 public abstract class Client implements Runnable {
 
-    public Robot rob = new Robot();
 
-    public boolean running = false;
-    private Rectangle clientArea;
+    public Robot rob = new Robot(); //
 
-    /**
-     * The offset values used to find actual coordinates
-     */
+    public boolean running = false; // Flag for whether or not to keep looping the flag
+    private Rectangle clientArea; // The area of responsibility for this client.
+
+    // The offset values used to find actual coordinates
     private int xOffset;
     private int yOffset;
 
-    /**
-     * the images of the buttons to be checked for
-     */
-    BufferedImage clientAreaImage;
+    BufferedImage clientAreaImage; // The images of the buttons to be checked for
 
     /**
      * Client is a class meant to be parent to Host and Mule classes
