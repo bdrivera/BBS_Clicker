@@ -7,56 +7,57 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import static java.lang.System.*;
+
 /**
- * @author BOLLEJEF
+ * @author BOLLEJEF, Bret
  * Image scanner takes an image and checks if it exists on screen.
  */
 public class ImageScanner {
+
+    private int foundX = 0;
+    private int foundY = 0;
 
     /**
      *
      * @param bi image to check for on screen
      * @return is the image on the screen currently?
      */
-    public boolean isOnScreen(BufferedImage bi){
-        BufferedImage image = null;
-        try {
-            image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        for(int x = 0; x< image.getWidth();x++){
-            for(int y = 0; y< image.getHeight();y++){
+    public boolean isOnScreen(BufferedImage image, BufferedImage bi) {
+        for(int x = 0; x< image.getWidth();x++) { //Base image x iteration...
+            for(int y = 0; y< image.getHeight();y++) { //base image y iteration...
 
-                boolean invalid = false;
-                int k = x,l = y;
+                boolean invalid = false; //set match flag to found...
+                int x3 = x, y3 = y; //set place holders to current base image coords
 
-
-                for(int a = 0;a<bi.getWidth();a++){
-                    l = y;
-                    for(int b = 0;b<bi.getHeight();b++){
-                        if(bi.getRGB(a, b) != image.getRGB(k, l)){
+                for(int x2 = 0;x2 <bi.getWidth(); x2++) { //comparison image x iteration...
+                    y3 = y; //set place holder y to current base image coords
+                    for(int y2 = 0; y2 <bi.getHeight(); y2++) { //comparison image y iteration...
+                        //if comparison image pixel does not equal base image placeholders...
+                        if(bi.getRGB(x2, y2) != image.getRGB(x3, y3)) {
                             invalid = true;
                             break;
-                        }
-                        else{
-                            l++;
+                        } else {
+                            y3++;
                         }
                     }
-                    if(invalid){
+                    if(invalid) {
                         break;
-                    }else{
-                        k++;
+                    } else {
+                        x3++;
                     }
 
                 }
 
-                if(!invalid){
+                if(!invalid) { //If there is a match...
+                    foundX = x3 - (bi.getWidth() / 2);
+                    foundY = y3 - (bi.getHeight() / 2);
+                    out.println(x3 + ":" + y3);
                     return true;
                 }
             }
         }
-        return false; //If no image is found
+        return false; //If no image match is found...
 
     }
 

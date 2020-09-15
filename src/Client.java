@@ -6,7 +6,9 @@ import java.awt.image.BufferedImage;
 /**
  * @author bret
  *
- * Uses ImageScanner class to check and handle if certain images are on screen
+ * Abstract Parent that defines a client that will have the basic structure to
+ * read its portion of the screen(known as area of responsibility) and click
+ * the mouse within that area.
  */
 
 public abstract class Client implements Runnable {
@@ -49,7 +51,7 @@ public abstract class Client implements Runnable {
 
     /**
      * Used to get the x coordinate relative to entire screen
-     * @param x x coordinate of area of responsiblity
+     * @param x x coordinate of area of responsibility
      * @return screen x coordinate
      */
     public int getRelativeX(int x) {
@@ -58,7 +60,7 @@ public abstract class Client implements Runnable {
 
     /**
      * Used to get the y coordinate relative to entire screen
-     * @param y y coordinate of area of responsiblity
+     * @param y y coordinate of area of responsibility
      * @return screen y coordinate
      */
     public int getRelativeY(int y) {
@@ -72,7 +74,7 @@ public abstract class Client implements Runnable {
      */
     private void leftClickOnLocation(int x, int y) {
         rob.mouseMove(x, y);
-        rob.mousePress(InputEvent.BUTTON1_MASK);//come back to this, depriciated value
+        rob.mousePress(InputEvent.BUTTON1_MASK);//come back to this, depreciated value
         rob.delay(200);
         rob.mouseRelease(InputEvent.BUTTON1_MASK);
     }

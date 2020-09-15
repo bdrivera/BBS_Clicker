@@ -4,6 +4,7 @@ import java.awt.*;
  * @author bret
  *
  * Host extends the abstract class Client
+ * The host will run the "mod" and serves to invite "Mules" to the to the raid
  */
 public class Host extends Client implements Runnable {
 
@@ -14,6 +15,8 @@ public class Host extends Client implements Runnable {
     public void run() {
         running = true;
         while(running) {
+
+            
 
         }
     }
