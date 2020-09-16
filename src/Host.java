@@ -1,4 +1,6 @@
-import java.awt.*;
+import java.awt.AWTException;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 /**
  * @author bret
@@ -8,16 +10,15 @@ import java.awt.*;
  */
 public class Host extends Client implements Runnable {
 
-    public Host(int x1, int y1, int x2, int y2) throws AWTException {
+    public Host(int x1, int y1, int x2, int y2) throws AWTException, IOException {
         super(x1, y1, x2, y2);
     }
 
+    @Override
     public void run() {
         running = true;
         while(running) {
-
-            
-
+            BufferedImage activeScreen = getClientAreaImage();
         }
     }
 }

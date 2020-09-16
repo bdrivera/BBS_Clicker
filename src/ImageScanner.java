@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 import static java.lang.System.*;
 
 /**
- * @author BOLLEJEF, Bret
+ * @author BOLLEJEF, modified by Bret
  * Image scanner takes an image and checks if it exists on screen.
  */
 public class ImageScanner {
