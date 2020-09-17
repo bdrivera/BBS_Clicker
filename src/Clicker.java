@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.io.IOException;
 
+import static java.lang.System.*;
+
 public class Clicker {
 
     /**
@@ -28,10 +30,16 @@ public class Clicker {
                 mule[i - 1] = new Mule(
                                         (topX + (xOffset * (i))), topY,
                                          (bottX + (xOffset * (i))), bottY);
+
+                out.println("Client[" + i + "] @ (" + (topX + (xOffset * (i))) + ", " + topY + ")" +
+                        " (" + (bottX + (xOffset * (i))) + ", " + bottY + ")");
             } else {
                 mule[i - 1] = new Mule(
                         (topX + (xOffset * (i - 2))), (topY + yOffset),
                         (bottX + (xOffset * (i - 2))), (bottY + yOffset));
+
+                out.println("Client[" + i + "] @ (" + (topX + (xOffset * (i))) + ", " + (topY + yOffset) + ")" +
+                        " (" + (bottX + (xOffset * (i))) + ", " + (bottY + yOffset) + ")");
             }
             client[i] = new Thread(mule[i-1]);
         }
