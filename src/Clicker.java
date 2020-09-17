@@ -19,7 +19,7 @@ public class Clicker {
         final int yOffset = 376;
 
         Thread[] client = new Thread[CLIENT_COUNT];
-        Host host = new Host(topX, topY, topX, topY, (CLIENT_COUNT - 1));
+        Host host = new Host(topX, topY, bottX, bottY, (CLIENT_COUNT - 1));
         Mule[] mule = new Mule[CLIENT_COUNT - 1];
 
         client[0] = new Thread(host);

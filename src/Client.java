@@ -87,26 +87,26 @@ public abstract class Client implements Runnable {
      */
     private synchronized void loadResourceHash() throws IOException {
         if(hmRefImages.isEmpty()) {
-            hmRefImages.put("screenCap", ImageIO.read(new File("res\\screenCap.png")));
-            hmRefImages.put("autoOff", ImageIO.read(new File("res\\autoOff.png")));
-            hmRefImages.put("autoOn", ImageIO.read(new File("res\\autoOn.png")));
-            hmRefImages.put("chatIcon", ImageIO.read(new File("res\\chatIcon.png")));
-            hmRefImages.put("close", ImageIO.read(new File("res\\close.png")));
-            hmRefImages.put("closeNews", ImageIO.read(new File("res\\closeNews.png")));
-            hmRefImages.put("createRoom", ImageIO.read(new File("res\\createRoom.png")));
-            hmRefImages.put("epicRaids", ImageIO.read(new File("res\\epicRaids.png")));
-            hmRefImages.put("erQuestSelect", ImageIO.read(new File("res\\erQuestSelect.png")));
-            hmRefImages.put("erStartQuest", ImageIO.read(new File("res\\erStartQuest.png")));
-            hmRefImages.put("erTop", ImageIO.read(new File("res\\erTop.png")));
-            hmRefImages.put("guildLogo", ImageIO.read(new File("res\\guildLogo.png")));
-            hmRefImages.put("inviteIcon", ImageIO.read(new File("res\\inviteIcon.png")));
-            hmRefImages.put("inviteSent", ImageIO.read(new File("res\\inviteSent.png")));
-            hmRefImages.put("inviteText", ImageIO.read(new File("res\\inviteText.png")));
-            hmRefImages.put("ok", ImageIO.read(new File("res\\ok.png")));
-            hmRefImages.put("quests", ImageIO.read(new File("res\\quests.png")));
-            hmRefImages.put("retry", ImageIO.read(new File("res\\retry.png")));
-            hmRefImages.put("startRaid", ImageIO.read(new File("res\\startRaid.png")));
-            hmRefImages.put("ult200", ImageIO.read(new File("res\\ult200.png")));
+            System.out.println("Loading Resources...");
+            hmRefImages.put("autoOff", ImageIO.read(new File("res/autoOff.png")));
+            hmRefImages.put("autoOn", ImageIO.read(new File("res/autoOn.png")));
+            hmRefImages.put("chatIcon", ImageIO.read(new File("res/chatIcon.png")));
+            hmRefImages.put("close", ImageIO.read(new File("res/close.png")));
+            hmRefImages.put("closeNews", ImageIO.read(new File("res/closeNews.png")));
+            hmRefImages.put("createRoom", ImageIO.read(new File("res/createRoom.png")));
+            hmRefImages.put("epicRaids", ImageIO.read(new File("res/epicRaids.png")));
+            //hmRefImages.put("erQuestSelect", ImageIO.read(new File("res/erQuestSelect.png")));
+            hmRefImages.put("erStartQuest", ImageIO.read(new File("res/erStartQuest.png")));
+            hmRefImages.put("erTop", ImageIO.read(new File("res/erTop.png")));
+            hmRefImages.put("guildLogo", ImageIO.read(new File("res/guildLogo.png")));
+            hmRefImages.put("inviteIcon", ImageIO.read(new File("res/inviteIcon.png")));
+            hmRefImages.put("inviteSent", ImageIO.read(new File("res/inviteSent.png")));
+            hmRefImages.put("inviteText", ImageIO.read(new File("res/inviteText.png")));
+            hmRefImages.put("ok", ImageIO.read(new File("res/ok.png")));
+            hmRefImages.put("quests", ImageIO.read(new File("res/quests.png")));
+            hmRefImages.put("retry", ImageIO.read(new File("res/retry.png")));
+            hmRefImages.put("startRaid", ImageIO.read(new File("res/startRaid.png")));
+            hmRefImages.put("ult200", ImageIO.read(new File("res/ult200.png")));
         }
     }
 
@@ -196,7 +196,7 @@ public abstract class Client implements Runnable {
      * @return error flag condition
      */
     public boolean isInError() {
-        return isInError();
+        return isInError;
     }
 
     /**
