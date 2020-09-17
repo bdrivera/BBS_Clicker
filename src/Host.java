@@ -10,10 +10,21 @@ import java.io.IOException;
  */
 public class Host extends Client implements Runnable {
 
+    /**
+     * Host is a child of the Client class and manages Mules
+     * @param x1 Top left x coordinate of client window
+     * @param y1 Top left y coordinate of client window
+     * @param x2 Bottom right x coordinate of client window
+     * @param y2 bottom right y coordinate of client windows
+     * @throws AWTException, IOException
+     */
     public Host(int x1, int y1, int x2, int y2, int mules) throws AWTException, IOException {
         super(x1, y1, x2, y2, mules);
     }
 
+    /**
+     * Interface method from Runnable. Run method for thread.
+     */
     @Override
     public void run() {
         while(isRunning()) { //getClientAreaImage();
