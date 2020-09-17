@@ -184,7 +184,7 @@ public abstract class Client implements Runnable {
      * @return invite flag condition
      */
     public boolean isInvited() {
-        return raidFlag;
+        return inviteFlag;
     }
 
     /**
