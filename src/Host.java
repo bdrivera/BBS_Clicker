@@ -1,5 +1,4 @@
 import java.awt.AWTException;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
@@ -19,7 +18,8 @@ public class Host extends Client implements Runnable {
      * @throws AWTException, IOException
      */
     public Host(int x1, int y1, int x2, int y2, int mules) throws AWTException, IOException {
-        super(x1, y1, x2, y2, mules);
+        super(x1, y1, x2, y2);
+        setMuleCount(mules);
     }
 
     /**
@@ -36,7 +36,6 @@ public class Host extends Client implements Runnable {
 
             if(isInError()) {
 
-                continue;
             } else if(isInvited()) { // If you have sent the invite...
                 if(getMuleReport() == getMuleCount()) {
                     if(isInAOR("erStartQuest")) {
@@ -47,7 +46,7 @@ public class Host extends Client implements Runnable {
                         switchRaidFlag();
                     }
                 }
-                continue;
+
             } else if(isRaiding()) { // If you are currently in a raid...
 
                 if(isInAOR("autoOn")) {
@@ -56,7 +55,6 @@ public class Host extends Client implements Runnable {
                     switchRaidFlag();
                     leftClickOnLocation(getAORX(), getAORY());
                 }
-                continue;
 
             } else { // If you are not special...
 

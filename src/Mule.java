@@ -1,5 +1,4 @@
 import java.awt.AWTException;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
@@ -22,8 +21,8 @@ public class Mule extends Client implements Runnable {
      * @param y2 bottom right y coordinate of client windows
      * @throws AWTException, IOException
      */
-    public Mule(int x1, int y1, int x2, int y2, int mules) throws AWTException, IOException {
-        super(x1, y1, x2, y2, mules);
+    public Mule(int x1, int y1, int x2, int y2) throws AWTException, IOException {
+        super(x1, y1, x2, y2);
     }
 
     @Override
@@ -37,7 +36,6 @@ public class Mule extends Client implements Runnable {
 
             if(isInError()) {
 
-                continue;
             } else if(isInvited()) { // If you have sent the invite...
                 if(isInAOR("chatIcon")) {
                     leftClickOnLocation(getAORX(), getAORY());
@@ -48,7 +46,6 @@ public class Mule extends Client implements Runnable {
                     reported = true;
                 }
 
-                continue;
             } else if(isRaiding()) { // If you are currently in a raid...
                 reported = false;
 
@@ -60,7 +57,6 @@ public class Mule extends Client implements Runnable {
                         functionCounter = 0;
                     }
                 }
-                continue;
 
             } else { // If you are not special...
                 if(isInAOR("erTop")) {

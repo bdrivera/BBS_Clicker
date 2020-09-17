@@ -51,13 +51,12 @@ public abstract class Client implements Runnable {
      * @param y2 bottom right y coordinate of client windows
      * @throws AWTException, IOException
      */
-    public Client(int x1, int y1, int x2, int y2, int mules) throws AWTException, IOException {
+    public Client(int x1, int y1, int x2, int y2) throws AWTException, IOException {
         int width = x2 - x1;
         int height = y2 - y1;
         clientArea = new Rectangle(x1, y1, width, height);
         xOffset = x1;
         yOffset = y1;
-        muleCount = 6;
         loadResourceHash();
         startRunning();
     }
@@ -227,6 +226,14 @@ public abstract class Client implements Runnable {
      */
     public void stopRunning() {
         running = false;
+    }
+
+    /**
+     * Used to set the amount of mules being controlled
+     * @param count number of mules to be controlled
+     */
+    public void setMuleCount(int count) {
+        muleCount = count;
     }
 
     /**
