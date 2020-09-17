@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.Hashtable;
 import javax.imageio.ImageIO;
 
+import static java.lang.System.*;
+
 /**
  * @author bret
  *
@@ -87,7 +89,7 @@ public abstract class Client implements Runnable {
      */
     private synchronized void loadResourceHash() throws IOException {
         if(hmRefImages.isEmpty()) {
-            System.out.println("Loading Resources...");
+            out.println("Loading Resources...");
             hmRefImages.put("autoOff", ImageIO.read(new File("res/autoOff.png")));
             hmRefImages.put("autoOn", ImageIO.read(new File("res/autoOn.png")));
             hmRefImages.put("chatIcon", ImageIO.read(new File("res/chatIcon.png")));
@@ -174,6 +176,7 @@ public abstract class Client implements Runnable {
      */
     public void switchRaidFlag() {
         raidFlag = raidFlag ? false : true;
+        out.println("raidFlag Switch! [" + isRaiding() + "]");
     }
 
     /**
@@ -189,6 +192,7 @@ public abstract class Client implements Runnable {
      */
     public void switchInviteFlag() {
         inviteFlag = inviteFlag ? false : true;
+        out.println("inviteFlag Switch! [" + isInvited() + "]");
     }
 
     /**
@@ -264,6 +268,7 @@ public abstract class Client implements Runnable {
      */
     public synchronized void reportMule() {
         muleReport++;
+        out.println("mule report! [" + getMuleReport() + "]");
     }
 
 

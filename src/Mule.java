@@ -1,6 +1,8 @@
 import java.awt.AWTException;
 import java.io.IOException;
 
+import static java.lang.System.*;
+
 /**
  * @author bret
  *
@@ -27,6 +29,7 @@ public class Mule extends Client implements Runnable {
 
     @Override
     public void run() {
+        out.println("Mule running!");
         while(isRunning()) { //getClientAreaImage();
             try {
                 Thread.sleep(TICK_TIME); // sleeps a tick

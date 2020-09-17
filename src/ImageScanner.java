@@ -52,7 +52,7 @@ public class ImageScanner {
                 if(!invalid) { //If there is a match...
                     foundX = x3 - (bi.getWidth() / 2);
                     foundY = y3 - (bi.getHeight() / 2);
-                    out.println(x3 + ":" + y3);
+                    //out.println(x3 + ":" + y3);
                     return true;
                 }
             }
