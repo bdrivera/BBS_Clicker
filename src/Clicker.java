@@ -45,7 +45,8 @@ public class Clicker {
         }
 
         for (Thread i : client) {
-            i.run();
+            out.println("Started!!!");
+            i.start();
         }
     }
 
