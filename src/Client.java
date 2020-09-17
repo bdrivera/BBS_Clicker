@@ -175,7 +175,7 @@ public abstract class Client implements Runnable {
      * Switches the condition of the raid flag to opposite value
      */
     public void switchRaidFlag() {
-        raidFlag = raidFlag ? true : false;
+        raidFlag = !raidFlag;
         out.println("raidFlag Switch! [" + isRaiding() + "]");
     }
 
@@ -191,7 +191,7 @@ public abstract class Client implements Runnable {
      * Switches the condition of the invite flag to opposite value
      */
     public void switchInviteFlag() {
-        inviteFlag = inviteFlag ? true : false;
+        inviteFlag = !inviteFlag;
         out.println("inviteFlag Switch! [" + isInvited() + "]");
     }
 
@@ -207,7 +207,7 @@ public abstract class Client implements Runnable {
      * Switches the condition of the error flag to opposite value
      */
     public void switchInError() {
-        isInError = isInError ? true : false;
+        isInError = !isInError;
     }
 
     /**
