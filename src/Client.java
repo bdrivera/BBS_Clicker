@@ -100,7 +100,7 @@ public abstract class Client implements Runnable {
             //hmRefImages.put("erQuestSelect", ImageIO.read(new File("res/erQuestSelect.png")));
             hmRefImages.put("erStartQuest", ImageIO.read(new File("res/erStartQuest.png")));
             hmRefImages.put("erTop", ImageIO.read(new File("res/erTop.png")));
-            hmRefImages.put("guildLogo", ImageIO.read(new File("res/guildLogo.png")));
+            hmRefImages.put("playerInfoBTN", ImageIO.read(new File("res/playerInfoBTN.png")));
             hmRefImages.put("inviteIcon", ImageIO.read(new File("res/inviteIcon.png")));
             hmRefImages.put("inviteSent", ImageIO.read(new File("res/inviteSent.png")));
             hmRefImages.put("inviteText", ImageIO.read(new File("res/inviteText.png")));
@@ -245,6 +245,7 @@ public abstract class Client implements Runnable {
      * @return amount of mules running
      */
     public int getMuleCount() {
+        out.println("Mule count [" + muleCount + "]");
         return muleCount;
     }
 

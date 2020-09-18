@@ -41,7 +41,7 @@ public class Mule extends Client implements Runnable {
 
             } else if(isInvited()) { // If you have sent the invite...
                 if (!reported) {
-                    if (isInAOR("guildLogo")) {
+                    if (isInAOR("playerInfoBTN")) {
                         reportMule();
                         reported = true;
                     } else if (isInAOR("chatIcon")) {
