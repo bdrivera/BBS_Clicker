@@ -24,6 +24,7 @@ public class ImageScanner {
      * @return is the image on the screen currently?
      */
     public boolean isOnScreen(BufferedImage image, BufferedImage bi) {
+        System.out.println("Looking for an image....");
         for(int x = 0; x< image.getWidth();x++) { //Base image x iteration...
             for(int y = 0; y< image.getHeight();y++) { //base image y iteration...
 
