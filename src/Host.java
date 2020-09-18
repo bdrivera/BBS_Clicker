@@ -45,6 +45,7 @@ public class Host extends Client implements Runnable {
                     if(isInAOR("erStartQuest")) {
                         leftClickOnLocation(getAORX(), getAORY());
                     } else if(isInAOR("startRaid")) {
+                        out.println("Starting Raid...");
                         leftClickOnLocation(getAORX(), getAORY());
                         switchInviteFlag();
                         switchRaidFlag();
