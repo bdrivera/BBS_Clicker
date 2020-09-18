@@ -43,6 +43,11 @@ public class Host extends Client implements Runnable {
                     leftClickOnLocation(getAORX(), getAORY());
                 } else if(getMuleReport() == getMuleCount()) {
                     if(isInAOR("erStartQuest")) {
+                        try {
+                            Thread.sleep(2000); //Required delay, causes errors in emulator without
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         leftClickOnLocation(getAORX(), getAORY());
                     } else if(isInAOR("startRaid")) {
                         out.println("Starting Raid...");
