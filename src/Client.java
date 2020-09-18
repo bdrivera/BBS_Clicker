@@ -42,7 +42,7 @@ public abstract class Client implements Runnable {
 
     BufferedImage clientAreaImage; // The images of the buttons to be checked for
 
-    public static final int TICK_TIME = 500; // Time in miliseconds for each tick iteration
+    public static final int TICK_TIME = 1000; // Time in miliseconds for each tick iteration
     public static final int TICK_MULTI = 1000 / TICK_TIME; // Used to scale ticks to seconds
 
     /**
