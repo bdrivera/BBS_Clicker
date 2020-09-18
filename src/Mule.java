@@ -54,9 +54,8 @@ public class Mule extends Client implements Runnable {
                 reported = false;
 
                 if(isInAOR("autoOff") || functionCounter > 0) {
-                    if(functionCounter <= (10 * TICK_MULTI)) { // replace number with desired seconds to wait
+                    if(functionCounter <= (11 * TICK_MULTI)) { // replace number with desired seconds to wait
                         functionCounter++;
-                        out.println("Waiting to destroy... " + functionCounter);
                     } else {
                         leftClickOnLocation(getAORX(), getAORY());
                         functionCounter = 0;

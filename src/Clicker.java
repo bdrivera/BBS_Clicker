@@ -10,7 +10,7 @@ public class Clicker {
      * @param args runtime arguments
      */
     public static void main(String[] args) throws AWTException, IOException {
-        final int CLIENT_COUNT = 2;
+        final int CLIENT_COUNT = 3;
 
         final int topX = 4;
         final int topY = 4;
