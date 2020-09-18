@@ -71,10 +71,10 @@ public abstract class Client implements Runnable {
     public synchronized void leftClickOnLocation(int x, int y) {
         rob.mouseMove(x, y);
         rob.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        rob.delay(200);
+        rob.delay(50);
         rob.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         try {
-            Thread.sleep(250);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
