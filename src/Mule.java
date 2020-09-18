@@ -12,6 +12,7 @@ import static java.lang.System.*;
 public class Mule extends Client implements Runnable {
 
     private boolean reported = false;
+    private boolean acceptedInvite = false;
     private int functionCounter = 0;
     private int errorCounter = 0;
 
@@ -43,8 +44,9 @@ public class Mule extends Client implements Runnable {
                     if (isInAOR("playerInfoBTN")) {
                         reportMule();
                         reported = true;
-                    } else if (isInAOR("chatIcon")) {
+                    } else if (isInAOR("chatIcon") && !acceptedInvite) {
                         leftClickOnLocation(getAORX(), getAORY());
+                        acceptedInvite = true;
                     } else if (isInAOR("inviteText")) {
                         leftClickOnLocation((getAORX() + 150), getAORY());
                     }
