@@ -37,7 +37,7 @@ public class Host extends Client implements Runnable {
             if(isInError()) {
 
             } else if(isInvited()) { // If you have sent the invite...
-                if(isInAOR("ok")) {
+                if(isInAOR("close")) {
                     leftClickOnLocation(getAORX(), getAORY());
                 } else if(getMuleReport() == getMuleCount()) {
                     if(isInAOR("erStartQuest")) {
