@@ -63,7 +63,9 @@ public class Host extends Client implements Runnable {
 
             } else { // If you are not special...
 
-                if(isInAOR("createRoom")) {
+                if(isInAOR("ult200")) {
+                    leftClickOnLocation(getAORX(), getAORY());
+                } else if(isInAOR("createRoom")) {
                     leftClickOnLocation(getAORX(), getAORY());
                 } else if(isInAOR("inviteIcon")) {
                     leftClickOnLocation(getAORX(), getAORY());
