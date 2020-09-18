@@ -83,6 +83,11 @@ public abstract class Client implements Runnable {
         mouse.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         mouse.delay(50);
         mouse.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
