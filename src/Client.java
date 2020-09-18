@@ -253,7 +253,6 @@ public abstract class Client implements Runnable {
      * @return number of mules who have reported
      */
     public int getMuleReport() {
-        out.println("Mule report [" + muleReport + "]");
         return muleReport;
     }
 

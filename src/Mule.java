@@ -29,7 +29,6 @@ public class Mule extends Client implements Runnable {
 
     @Override
     public void run() {
-        out.println("Mule running!");
         while(isRunning()) { //getClientAreaImage();
             try {
                 Thread.sleep(TICK_TIME); // sleeps a tick
@@ -55,7 +54,7 @@ public class Mule extends Client implements Runnable {
                 reported = false;
 
                 if(isInAOR("autoOff")) {
-                    if(functionCounter < (functionCounter * TICK_MULTI)) {
+                    if(functionCounter <= (8 * TICK_MULTI)) { // replace number with desired seconds to wait
                         functionCounter++;
                     } else {
                         leftClickOnLocation(getAORX(), getAORY());

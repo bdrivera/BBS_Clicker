@@ -42,9 +42,9 @@ public class Host extends Client implements Runnable {
                 if(isInAOR("close")) {
                     leftClickOnLocation(getAORX(), getAORY());
                 } else if(getMuleReport() == getMuleCount()) {
-                    out.println("All mules present!");
                     if(isInAOR("erStartQuest")) {
                         leftClickOnLocation(getAORX(), getAORY());
+                        resetMuleReport();
                     } else if(isInAOR("startRaid")) {
                         leftClickOnLocation(getAORX(), getAORY());
                         switchInviteFlag();
