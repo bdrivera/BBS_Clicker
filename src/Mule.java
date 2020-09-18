@@ -53,7 +53,7 @@ public class Mule extends Client implements Runnable {
             } else if(isRaiding()) { // If you are currently in a raid...
                 reported = false;
 
-                if(isInAOR("autoOff")) {
+                if(isInAOR("autoOff") || functionCounter > 0) {
                     if(functionCounter <= (8 * TICK_MULTI)) { // replace number with desired seconds to wait
                         functionCounter++;
                         out.println("Waiting to destroy... " + functionCounter);
