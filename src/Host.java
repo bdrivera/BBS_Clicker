@@ -44,11 +44,11 @@ public class Host extends Client implements Runnable {
                 } else if(getMuleReport() == getMuleCount()) {
                     if(isInAOR("erStartQuest")) {
                         leftClickOnLocation(getAORX(), getAORY());
-                        resetMuleReport();
                     } else if(isInAOR("startRaid")) {
                         leftClickOnLocation(getAORX(), getAORY());
                         switchInviteFlag();
                         switchRaidFlag();
+                        resetMuleReport();
                     }
                 }
 
