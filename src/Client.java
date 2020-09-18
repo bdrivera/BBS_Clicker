@@ -20,7 +20,17 @@ import static java.lang.System.*;
 public abstract class Client implements Runnable {
 
 
-    public Robot rob = new Robot(); //Robot instance used for
+    public Robot rob = new Robot(); //Robot instance used for screen scanning
+    private static volatile Robot mouse;
+
+    static {
+        try {
+            mouse = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
+
     public ImageScanner scan = new ImageScanner();
 
     private static Hashtable<String, BufferedImage>
@@ -68,16 +78,11 @@ public abstract class Client implements Runnable {
      * @param x horizontal coordinate of the screen
      * @param y vertical coordinate of the screen
      */
-    public synchronized void leftClickOnLocation(int x, int y) {
-        rob.mouseMove(x, y);
-        rob.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        rob.delay(50);
-        rob.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public static synchronized void leftClickOnLocation(int x, int y) {
+        mouse.mouseMove(x, y);
+        mouse.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        mouse.delay(50);
+        mouse.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
     /**

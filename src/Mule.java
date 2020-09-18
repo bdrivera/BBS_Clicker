@@ -54,6 +54,7 @@ public class Mule extends Client implements Runnable {
 
             } else if(isRaiding()) { // If you are currently in a raid...
                 reported = false;
+                acceptedInvite = false;
 
                 if(isInAOR("autoOff") || functionCounter > 0) {
                     if(functionCounter <= (11 * TICK_MULTI)) { // replace number with desired seconds to wait
