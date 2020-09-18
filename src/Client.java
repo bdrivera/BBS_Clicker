@@ -73,6 +73,11 @@ public abstract class Client implements Runnable {
         rob.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         rob.delay(200);
         rob.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
