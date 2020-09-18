@@ -1,6 +1,8 @@
 import java.awt.AWTException;
 import java.io.IOException;
 
+import static java.lang.System.*;
+
 /**
  * @author bret
  *
@@ -40,6 +42,7 @@ public class Host extends Client implements Runnable {
                 if(isInAOR("close")) {
                     leftClickOnLocation(getAORX(), getAORY());
                 } else if(getMuleReport() == getMuleCount()) {
+                    out.println("All mules present!");
                     if(isInAOR("erStartQuest")) {
                         leftClickOnLocation(getAORX(), getAORY());
                     } else if(isInAOR("startRaid")) {
